@@ -34,8 +34,11 @@ class Player(GameSprite):
 
 player = Player('3.png', 5, 200, 10, 50, 150)
 player1 = Player('3.png', 645, 200, 10, 50, 150)
+ball = GameSprite('ball.png', 325, 200, 10, 50, 50)
 
 
+speed_x = 1
+speed_y = 1
 finish = False
 clock = time.Clock()
 FPS = 60
@@ -49,6 +52,9 @@ while game:
         player1.update_r()
         player.reset()
         player1.reset()
+        ball.reset()
+        ball.rect.x += speed_x
+        ball.rect.y += speed_y
 
     display.update()
     clock.tick(FPS)
